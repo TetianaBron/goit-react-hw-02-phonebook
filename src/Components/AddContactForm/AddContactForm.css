@@ -1,0 +1,30 @@
+.Form {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.Label {
+  margin-bottom: 20px;
+}
+
+.Input {
+  margin-bottom: 30px;
+  outline: none;
+  padding: 5px 15px;
+}
+
+.Input:focus,
+.Input:hover {
+  border: 2px solid rgb(131, 188, 202);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+button {
+  cursor: pointer;
+  padding: 5px 15px;
+}
+
+button:focus,
+button:hover {
+  background-color: rgb(217, 233, 238);
+}
