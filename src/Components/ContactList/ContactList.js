@@ -1,12 +1,13 @@
 import './ContactList.css';
 
-const ContactList = ({ contacts, title }) => (
+
+const ContactList = ({ contacts }) => (
     <div>
-    <h2>{title}</h2>
     <ul>
-        {contacts.map(({ id, text }) => (
-            <li    key={id}>
-                 {text.nameText}: {text.numberText}
+        {contacts.map(({ id, name, number }) => (
+            <li
+                key={id}>
+                 {name}: {number}
             </li>
         ))}
     </ul>
