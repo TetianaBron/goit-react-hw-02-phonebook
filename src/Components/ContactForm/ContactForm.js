@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './AddContactForm.css';
+import './ContactForm.css';
 
-export default class AddContactForm extends Component {
+export default class ContactForm extends Component {
     state = {
-        nameText: '',
-        numberText: ''
+        name: '',
+        number: ''
     };
 
     static propTypes = {
@@ -21,18 +21,18 @@ export default class AddContactForm extends Component {
     };
 
     handleSubmit = e => {
-        const {nameText, numberText} = this.state;
+        const {name, number} = this.state;
         e.preventDefault();
 
-           this.props.onAddContact(nameText, numberText);
+           this.props.onAddContact(name, number);
            this.setState({
-            nameText: '',
-            numberText: ''
+            name: '',
+            number: ''
         });
     };
     
     render() {
-        const { nameText, numberText } = this.state;
+        const { name, number } = this.state;
 
         return (
             <div>
@@ -40,21 +40,21 @@ export default class AddContactForm extends Component {
                     <label htmlFor="name" className="Label">Name</label>
                 <input
                     type="text"
-                    value={nameText}
+                    value={name}
                     id="name"
                     className="Input"
                         onChange={this.handleChange}
-                        name="nameText"
+                        name="name"
                     />
             
                  <label htmlFor="number" className="Label">Number</label>
                 <input
                     type="text"
-                    value={numberText}
+                    value={number}
                     id="number"
                     className="Input"
                     onChange={this.handleChange}
-                    name="numberText"
+                    name="number"
                     />
                     
                     <button type="submit">

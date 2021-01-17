@@ -1,6 +1,6 @@
-import './FindContact.css';
+import './Filter.css';
 
-const FindContact = ({value, onChangeFilter}) => (
+const Filter = ({value, onChangeFilter}) => (
     <div className="FindForm">
         <label htmlFor="find"
             className="FindLabel">
@@ -16,4 +16,4 @@ const FindContact = ({value, onChangeFilter}) => (
 </div>
 )
 
-export default FindContact;
+export default Filter;

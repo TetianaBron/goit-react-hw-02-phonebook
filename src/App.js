@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import Title from './Components/Title/Title';
-import AddContactForm from './Components/AddContactForm/AddContactForm';
+import ContactForm from './Components/ContactForm/ContactForm';
 import Layout from './Components/Layout/Layout';
-import FindContact from './Components/FindContact/FindContact';
+import Filter from './Components/Filter/Filter';
 import ContactList from './Components/ContactList/ContactList';
 
 
@@ -16,9 +15,7 @@ export default class App extends Component {
 
     state = {
         contacts: [],
-        filter: '',
-        name: '',
-        number: ''
+        filter: ''
     };
 
     addContact = (name, number) => {
@@ -28,11 +25,11 @@ export default class App extends Component {
        number
        };
 
-       this.setState(prevState => {
-      return {
-      contacts: [...prevState.contacts, contact],
-      };
-      });
+    this.setState(prevState => {
+    return {
+    contacts: [...prevState.contacts, contact],
+    };
+    });
     };
     
     changeFilter = filter => {
@@ -52,13 +49,13 @@ export default class App extends Component {
             
         return ( 
             <Layout>
-                <Title title="Phonebook" />
-                <AddContactForm onAddContact={this.addContact} /> 
+                <h1>Phonebook</h1>
+                <ContactForm onAddContact={this.addContact} /> 
                 {contacts.length > 0 && (
-                <Title title="Contacts"/>
+                <h2>Contacts</h2>
                 )}
                  {contacts.length > 0 && (
-                    <FindContact
+                    <Filter
                         value={filter}
                         onChangeFilter={this.changeFilter} />
                 )}
