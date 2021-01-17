@@ -36,6 +36,14 @@ export default class App extends Component {
         };
     };
     
+    removeContact = contactId => {
+        this.setState(prevState => {
+            return {
+                contacts: prevState.contacts.filter(({ id }) => id !== contactId),
+            };
+        });
+    };
+
     changeFilter = filter => {
         this.setState({ filter });
     };
@@ -65,7 +73,8 @@ export default class App extends Component {
                 )}
                 {contacts.length > 0 && (
                     <ContactList
-                        contacts={visibleContacts}/>
+                        contacts={visibleContacts}
+                        onRemoveContact={this.removeContact}/>
                 )} 
             </Layout>
         );

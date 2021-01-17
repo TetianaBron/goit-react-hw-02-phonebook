@@ -1,16 +1,23 @@
 import './ContactList.css';
 
 
-const ContactList = ({ contacts }) => (
+const ContactList = ({ contacts, onRemoveContact }) => (
     <div>
     <ul>
-        {contacts.map(({ id, name, number }) => (
+            {contacts.map(({ id, name, number }) => (
             <li
-                key={id}>
-                 {name}: {number}
+                key={id}
+                className="ContactItem">
+                   - {name}: {number}
+                <button
+                    type="button"
+                    onClick={() => onRemoveContact(id)}>
+                     Delete
+                 </button>
             </li>
         ))}
-    </ul>
+        </ul>
+        
     </div>
 );
 
