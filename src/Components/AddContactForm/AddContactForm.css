@@ -1,10 +1,12 @@
 .Form {
   display: inline-flex;
   flex-direction: column;
+  outline: 1px solid black;
+  padding: 30px;
 }
 
 .Label {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .Input {

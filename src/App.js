@@ -13,14 +13,14 @@ export default class App extends Component {
 
     state = {
         contacts: [],
-        name: ''
+        name: '',
+        number: ''
     };
 
 addContact = text => {
     const contact = {
     id: uuidv4(),
     text,
-    //completed: false,
     };
 
     this.setState(prevState => {

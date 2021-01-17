@@ -6,7 +6,7 @@ const ContactList = ({ contacts, title }) => (
     <ul>
         {contacts.map(({ id, text }) => (
             <li    key={id}>
-                 {text}
+                 {text.nameText}: {text.numberText}
             </li>
         ))}
     </ul>
