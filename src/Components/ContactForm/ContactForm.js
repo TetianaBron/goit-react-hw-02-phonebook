@@ -14,21 +14,19 @@ export default class ContactForm extends Component {
 
     handleChange = e => {
         const { name, value } = e.target;
-
-        this.setState({
-        [name]: value,
-        });
+            this.setState({
+                [name]: value,
+            });
     };
 
     handleSubmit = e => {
-        const {name, number} = this.state;
+        const { name, number } = this.state;
         e.preventDefault();
-
-           this.props.onAddContact(name, number);
-           this.setState({
-            name: '',
-            number: ''
-        });
+            this.props.onAddContact(name, number);
+            this.setState({
+                name: '',
+                number: ''
+            });
     };
     
     render() {
@@ -43,8 +41,8 @@ export default class ContactForm extends Component {
                     value={name}
                     id="name"
                     className="Input"
-                        onChange={this.handleChange}
-                        name="name"
+                    onChange={this.handleChange}
+                    name="name"
                     />
             
                  <label htmlFor="number" className="Label">Number</label>

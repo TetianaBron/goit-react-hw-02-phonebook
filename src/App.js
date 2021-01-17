@@ -25,11 +25,15 @@ export default class App extends Component {
        number
        };
 
-    this.setState(prevState => {
-    return {
-    contacts: [...prevState.contacts, contact],
-    };
-    });
+        if (this.state.contacts.find((item) => item.name.toLowerCase() === name.toLowerCase())) {
+            alert(`${name} is already in contacts.`);
+        } else {
+            this.setState(prevState => {
+                return {
+                    contacts: [...prevState.contacts, contact],
+                };
+            });
+        };
     };
     
     changeFilter = filter => {
