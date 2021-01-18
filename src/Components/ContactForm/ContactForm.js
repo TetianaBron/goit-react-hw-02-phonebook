@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './ContactForm.css';
 
 export default class ContactForm extends Component {
@@ -8,6 +9,7 @@ export default class ContactForm extends Component {
     };
 
     static propTypes = {
+        onAddContact: PropTypes.func,
     };
 
     static defaultProps = {};
@@ -22,20 +24,28 @@ export default class ContactForm extends Component {
     handleSubmit = e => {
         const { name, number } = this.state;
         e.preventDefault();
+
+        if (name === '' || number === '') {
+            alert('Enter the data.');
+        } else {
             this.props.onAddContact(name, number);
             this.setState({
                 name: '',
                 number: ''
             });
+        }
     };
     
     render() {
         const { name, number } = this.state;
-
         return (
             <div>
-                <form className="Form" onSubmit={this.handleSubmit} >
-                    <label htmlFor="name" className="Label">Name</label>
+                <form
+                    className="Form"
+                    onSubmit={this.handleSubmit} >
+                    <label
+                        htmlFor="name"
+                        className="Label">Name</label>
                 <input
                     type="text"
                     value={name}
@@ -45,9 +55,11 @@ export default class ContactForm extends Component {
                     name="name"
                     />
             
-                 <label htmlFor="number" className="Label">Number</label>
+                    <label
+                        htmlFor="number"
+                        className="Label">Number</label>
                 <input
-                    type="text"
+                    type="number"
                     value={number}
                     id="number"
                     className="Input"

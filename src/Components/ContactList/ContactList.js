@@ -1,4 +1,5 @@
 import './ContactList.css';
+import PropTypes from 'prop-types';
 
 
 const ContactList = ({ contacts, onRemoveContact }) => (
@@ -20,5 +21,10 @@ const ContactList = ({ contacts, onRemoveContact }) => (
         
     </div>
 );
+
+ContactList.propTypes = {
+  onRemoveContact: PropTypes.func,
+  contacts: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default ContactList;

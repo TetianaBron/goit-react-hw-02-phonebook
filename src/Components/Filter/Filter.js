@@ -1,4 +1,5 @@
 import './Filter.css';
+import PropTypes from 'prop-types';
 
 const Filter = ({value, onChangeFilter}) => (
     <div className="FindForm">
@@ -15,5 +16,10 @@ const Filter = ({value, onChangeFilter}) => (
              />
 </div>
 )
+
+Filter.propTypes = {
+  value: PropTypes.string,
+  onChangeFilter: PropTypes.func
+};
 
 export default Filter;
