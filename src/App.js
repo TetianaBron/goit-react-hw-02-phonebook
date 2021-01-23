@@ -70,7 +70,7 @@ export default class App extends Component {
                 {contacts.length > 0 && (
                 <h2>Contacts</h2>
                 )}
-                 {contacts.length > 0 && (
+                 {contacts.length > 1 && (
                     <Filter
                         value={filter}
                         onChangeFilter={this.changeFilter} />
